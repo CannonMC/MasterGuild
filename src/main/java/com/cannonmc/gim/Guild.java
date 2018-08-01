@@ -5,16 +5,14 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
-@Mod(modid = Guild.MODID, version = Guild.VERSION)
-public class Guild
-{
-    public static final String MODID = "examplemod";
-    public static final String VERSION = "1.0";
-    
-    @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-		// some example code
-        System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
-    }
+@Mod(modid = Guild.MODID, version = Guild.VERSION, acceptedMinecraftVersions = "[1.8.9]")
+public class Guild {
+	public static final String MODID = "gim";
+	public static final String VERSION = "1.0";
+
+	public static boolean ENABLED = false;
+	
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+	}
 }
