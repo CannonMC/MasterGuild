@@ -32,7 +32,7 @@ public class ChatMonitor {
 			}
 		}
 		
-		if (unformattedMessage.equals("WHATEVER THE END MESSAGE IS")) {
+		if (unformattedMessage.contains("Winner -") && unformattedMessage.startsWith(" ")) {
 			if (Guild.ENABLED) {
 				MWStarted = false;
 				Minecraft.getMinecraft().thePlayer.sendChatMessage("/play mw_standard");
