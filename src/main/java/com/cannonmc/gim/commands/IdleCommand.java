@@ -27,8 +27,7 @@ public class IdleCommand extends CommandBase {
 	@Override
 	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 		Guild.ENABLED = !Guild.ENABLED;
-		sender.addChatMessage(
-				new ChatComponentText(EnumChatFormatting.GOLD + "Idle: " + Boolean.toString(Guild.ENABLED)));
+		sender.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "Idle: " + Boolean.toString(Guild.ENABLED)));
 	}
 
 }
