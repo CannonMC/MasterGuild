@@ -16,6 +16,8 @@ public class ChatMonitor {
 
 	public Minecraft mc;
 	public String unformattedMessage;
+	
+	public static boolean MWStarted = false;
 
 	@SubscribeEvent
 	public void onChat(final ClientChatReceivedEvent event) throws InterruptedException {
@@ -26,12 +28,13 @@ public class ChatMonitor {
 		if (unformattedMessage.equals("Gates opening in 1 second!")) {
 			if (Guild.ENABLED) {
 				Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Game started"));
+				MWStarted = true;
 			}
 		}
 		
 		if (unformattedMessage.equals("WHATEVER THE END MESSAGE IS")) {
 			if (Guild.ENABLED) {
-				Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Game started"));
+				MWStarted = false;
 				Minecraft.getMinecraft().thePlayer.sendChatMessage("/play mw_standard");
 			}
 		}
