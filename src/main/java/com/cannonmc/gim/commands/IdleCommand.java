@@ -8,7 +8,11 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 
-public class IdleCommand extends CommandBase{
+public class IdleCommand extends CommandBase {
+
+	public boolean canCommandSenderUseCommand(ICommandSender sender) {
+		return true;
+	}
 
 	@Override
 	public String getCommandName() {
@@ -23,7 +27,8 @@ public class IdleCommand extends CommandBase{
 	@Override
 	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 		Guild.ENABLED = !Guild.ENABLED;
-		sender.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "Idle:" + Boolean.toString(Guild.ENABLED)));
+		sender.addChatMessage(
+				new ChatComponentText(EnumChatFormatting.GOLD + "Idle: " + Boolean.toString(Guild.ENABLED)));
 	}
 
 }

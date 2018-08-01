@@ -1,6 +1,9 @@
 package com.cannonmc.gim;
 
+import com.cannonmc.gim.commands.IdleCommand;
+
 import net.minecraft.init.Blocks;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -14,5 +17,6 @@ public class Guild {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		ClientCommandHandler.instance.registerCommand(new IdleCommand());
 	}
 }
