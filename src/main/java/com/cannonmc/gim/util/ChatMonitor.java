@@ -35,7 +35,7 @@ public class ChatMonitor {
 		if (unformattedMessage.contains("Winner -") && unformattedMessage.startsWith(" ")) {
 			if (Guild.ENABLED) {
 				MWStarted = false;
-				Minecraft.getMinecraft().thePlayer.sendChatMessage("/play mw_standard");
+				Join.megawalls();
 			}
 		}
 	}

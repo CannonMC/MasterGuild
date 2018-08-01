@@ -1,6 +1,7 @@
 package com.cannonmc.gim.commands;
 
 import com.cannonmc.gim.Guild;
+import com.cannonmc.gim.util.Join;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -28,6 +29,7 @@ public class IdleCommand extends CommandBase {
 	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 		Guild.ENABLED = !Guild.ENABLED;
 		sender.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "Idle: " + Boolean.toString(Guild.ENABLED)));
+		Join.megawalls();
 	}
 
 }
