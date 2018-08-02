@@ -2,7 +2,7 @@ package com.cannonmc.gim.commands;
 
 import com.cannonmc.gim.Guild;
 import com.cannonmc.gim.util.ChatMonitor;
-import com.cannonmc.gim.util.Join;
+import com.cannonmc.gim.util.CommandSend;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -29,6 +29,6 @@ public class TestCommand extends CommandBase {
 	@Override
 	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 		ChatMonitor.MWStarted = true;
+		System.out.println(ChatMonitor.MWStarted);
 	}
-
 }

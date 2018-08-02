@@ -12,6 +12,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import scala.Char;
 
 public class ChatMonitor {
 
@@ -30,14 +31,19 @@ public class ChatMonitor {
 			if (Guild.ENABLED) {
 				Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Game started"));
 				MWStarted = true;
+				CommandSend.gInfo();
 			}
 		}
 		
-		if (unformattedMessage.contains("Winner -") && unformattedMessage.startsWith(" ")) {
+		if (unformattedMessage.contains("Total Earned Guild Experience:") && MWStarted == true) {
 			if (Guild.ENABLED) {
+				CommandSend.joinMegawalls();
 				MWStarted = false;
-				Join.megawalls();
 			}
+		}
+		
+		if (unformattedMessage.startsWith(" ") && unformattedMessage.contains("Today: ")) {;
+			GuildCoinCounter.getGuildCoin(unformattedMessage);
 		}
 	}
 }
