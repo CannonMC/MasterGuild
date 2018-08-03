@@ -17,5 +17,5 @@ public class GuildCoinCounter {
 		nowCoins = guildCoins;
 		Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Integer.toString(nowCoins-prevCoins) + " guild coins earned."));
 	}
-
+	//test
 }
